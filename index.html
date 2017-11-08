@@ -58,26 +58,38 @@
   </div>
   <main>
     <article class="threads">
-      <div class="thread project"></div>
-      <div class="thread project"></div>
-      <div class="thread research"></div>
-      <div class="thread project"></div>
-      <div class="thread idea"></div>
-      <div class="thread project"></div>
-      <div class="thread research"></div>
-      <div class="thread project"></div>
-      <div class="thread research"></div>
-      <div class="thread idea"></div>
-      <div class="thread organization"></div>
-      <div class="thread idea"></div>
-      <div class="thread project"></div>
-      <div class="thread research"></div>
-      <div class="thread project"></div>
-      <div class="thread organization"></div>
-      <div class="thread project"></div>
-      <div class="thread idea"></div>
-      <div class="thread project"></div>
-      <div class="thread organization"></div>
+      <div class="thread" id="senstaff">
+        <!-- Project Image -->
+    		<a rel="leanModal" onclick="populateModal($(this)); return true;" class="projectLink projectLink-img" href="#modalPopup"></a>
+    		<br>
+        <!-- Project Category -->
+    		<a rel="leanModal" onclick="populateModal($(this)); return true;" class="projectLink projectLink-txt" href="#modalPopup"></a>
+        <br>
+        <!-- Project Title -->
+    		<a rel="leanModal" onclick="populateModal($(this)); return true;" class="projectLink projectLink-txt" href="#modalPopup"></a>
+        <br>
+        <!-- Project Organization -->
+    		<p class="schoolTag">RPI, 2017</p>
+      </div>
+      <div class="thread" id="doorstop"></div>
+      <div class="thread" id="microtop"></div>
+      <div class="thread" id="infinished"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
+      <div class="thread" id="callie"></div>
     </article>
   </main>
   <footer>
@@ -92,27 +104,33 @@
     </div>
     <p class="copyright">&copy;2017 <a href="">Luke Bateman</a></p>
   </footer>
-  <!--div id='modalPopup'>
-  <a class="modal_close">
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 313.4 313.4" style="enable-background:new 0 0 313.4 313.4;" xml:space="preserve">
-  <style type="text/css">
-  .X {fill:#00B5AD;}
-</style>
-<title>X</title>
-<polygon class="X" points="313.4,26.2 287.2,0 156.7,130.5 26.2,0 0,26.2 130.5,156.7 0,287.2 26.2,313.4 156.7,182.9
-287.2,313.4 313.4,287.2 182.9,156.7 "/>
-</svg>
-</a>
-<div class="imgDiv">
-<div class="personImg"></div>
-<img class="personImg-border" src="..img/developers/circleBorder-blue.svg">
+  <div id='modalPopup'>
+    <a class="modal_close">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 313.4 313.4" style="enable-background:new 0 0 313.4 313.4;" xml:space="preserve">
+        <style type="text/css">.X {fill:#00B5AD;}</style>
+        <title>X</title>
+        <polygon class="X" points="313.4,26.2 287.2,0 156.7,130.5 26.2,0 0,26.2 130.5,156.7 0,287.2 26.2,313.4 156.7,182.9 287.2,313.4 313.4,287.2 182.9,156.7 "/>
+      </svg>
+    </a>
+    <div class="projectHeader">
+      <h2 class="org"></h2>
+      <h1 class="title"></h1>
+      <h3 class="cat"></h3>
+    </div>
+    <div class="imgDiv">
+      <div class="img">
+        <p class="imgTxt"></p>
+      </div>
+    </div>
+    <div class="projectdetails">
+      <p class="goal"></p>
+      <a target="_blank" onclick="return clickable($(this));" href="#" class="name"></a>
+      <a>More Info</a>
+    </div>
 </div>
-<div class="textDiv">
-<a target="_blank" onclick="return clickable($(this));" href="#" class="name"></a>
-<p class="bio"></p>
-</div>
-</div-->
 <script src="js/vendor/jquery-1.12.0.min.js"></script>
 <script src="js/main.js"></script>
+<script src="scripts/jquery.leanModal.min.js"></script>
+<script src="scripts/modalPopup.js"></script>
 </body>
 </html>
