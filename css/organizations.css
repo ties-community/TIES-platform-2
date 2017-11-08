@@ -1,0 +1,11 @@
+.organization {
+  width: 200px;
+  height: 250px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.75%;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5); }
+
+/*# sourceMappingURL=organizations.css.map */

@@ -1,0 +1,127 @@
+/*==========================================================================
+Global Variables
+==========================================================================*/
+$icon-lineWidth: .25em;
+$main-font-color: #112725;
+$lighten: 20%;
+@import 'animations.scss';
+/*==========================================================================
+Base styles:
+==========================================================================*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    letter-spacing: .02em;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Raleway', sans-serif;
+    color: $main-font-color;
+    font-size: 1em;
+    overflow-x: hidden;
+    height: 100%;
+    background: linear-gradient(to bottom,#122623 0%, #023C5D 30%, #03535D 60%, #1B9250 100%);
+    background-attachment: fixed;
+  }
+img {
+    max-width: 100%;
+  }
+main {
+  @extend %animation;
+  display: flex;
+  justify-content: center;
+  padding-top: 12vh;
+}
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+ul {
+  list-style: none;
+}
+/*==========================================================================
+Navigation
+==========================================================================*/
+@import 'navBar.scss';
+/*==========================================================================
+Add Button
+==========================================================================*/
+@import 'addBar.scss';
+/*==========================================================================
+Main Content
+==========================================================================*/
+.threads {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  max-width: 80vw;
+}
+.thread {
+  width: 200px;
+  height: 250px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.75%;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, .5);
+}
+@import 'ideas.scss';
+@import 'research.scss';
+@import 'projects.scss';
+@import 'organizations.scss';
+/*
+==========================================================================
+Footer
+==========================================================================
+*/
+footer {
+  bottom: 0;
+  width: 100%;
+  z-index: 1001;
+  background: rgba(0,0,0,.8);
+  @extend %animation;
+  opacity: 1;
+  transform: translateY(0%);//make 200% to be off screen
+}
+/*
+==========================================================================
+Media Queries
+==========================================================================
+*/
+@media screen and (max-width: 900px) {
+    h1 {
+      font-size: 2em;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+    .landingPage .logo {
+      top: 10vh;
+    }
+  }
+@media screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.75em;
+    }
+    h2 {
+      font-size: 1.25em;
+    }
+    .sideMenu {
+      width: 100%;
+    }
+    .projectMenuActive {
+      transform: translateX(0%);
+    }
+    .landingPage .logo {
+      top: 30vh;
+    }
+  }
+@media screen and (max-width: 360px) {
+  .landingPage .logo {
+    top: 30vh;
+  }
+}

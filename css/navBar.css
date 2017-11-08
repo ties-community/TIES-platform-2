@@ -1,0 +1,37 @@
+.navBar {
+  width: 100vw;
+  height: 10vh;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  z-index: 10001;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5); }
+  .navBar li {
+    position: relative; }
+
+.filter ul {
+  background: #fff;
+  border-radius: 0px;
+  left: -12px;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  padding: 12px;
+  position: absolute;
+  top: 38px;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  visibility: hidden;
+  width: 150px; }
+  .filter ul li {
+    margin-bottom: 8%; }
+
+.filter:hover ul {
+  opacity: 1;
+  top: 20px;
+  visibility: visible; }
+
+/*# sourceMappingURL=navBar.css.map */
