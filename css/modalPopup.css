@@ -30,8 +30,6 @@
   padding-top: 200px;
   /*to set the same as width, because height: 100% isn't working */
   margin: 0 auto; }
-<<<<<<< HEAD
-=======
 
 #modalPopup .img {
   background-size: contain; }
@@ -49,7 +47,6 @@
 #modalPopup .bio a {
   color: #241F59;
   border-bottom: 1px #241F59 solid; }
->>>>>>> dc182b8a41a16722a8a72fbd6468f9f112477a01
 
 #modalPopup .img {
   background-size: contain; }

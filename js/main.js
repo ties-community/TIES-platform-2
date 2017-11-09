@@ -50,9 +50,7 @@ $('.addBar').mouseover(function () {
 });
 
 function populateProjects(e) {
-//Create div with required sub sections for each part of 
-
-
+//Create div with required sub sections for each part of
 
 
   //Creates a variable and associates it with the id of the tag selected in the html
