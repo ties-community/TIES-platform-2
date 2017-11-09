@@ -37,15 +37,19 @@
 #modalPopup .projectDetails {
 
 }
-#modalPopup .personImg {
+#modalPopup .imgDiv {
 	border-radius: 50%;
 	width: 200px;
 	padding-top: 200px; /*to set the same as width, because height: 100% isn't working */
 
 	margin: 0 auto;
+}
+
+#modalPopup .img {
 
 	background-size: contain;
 }
+
 #modalPopup .name {
 	line-height: 1.35em;
 	font-size: 1.3em;

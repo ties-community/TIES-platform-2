@@ -56,8 +56,8 @@ function populateModal(elt) {
 	var subtitle = projInfo[id + '-subtitle']
   var cat = projInfo[id + '-cat'];
 	var link = projInfo[id + '-link'];
-	var mission = projInfo[id + '-mission'];
 	var problem = projInfo[id + '-problem'];
+	var solution = projInfo[id + '-solution'];
 	var final = projInfo[id + '-final'];
 
 
@@ -68,7 +68,6 @@ function populateModal(elt) {
 
   //Creates modal variable to store the id associated with the modal window whenever it is displayed
 	var modal = $("#modalPopup");
-	var imgMod = $(".imgSection");
 
   //finds specific tages within the modal and adds css, html tags, and attributes to them
   //i.e. passes info from database above to modal to be displayed
@@ -76,8 +75,8 @@ function populateModal(elt) {
   modal.find('.title').html(title);
 	modal.find('.subtitle').html(cat);
   modal.find('.cat').html(cat);
-	modal.find('.mission').html(mission)
 	modal.find('.problem').html(problem)
+	modal.find('.solution').html(solution)
 	modal.find('.final').html(final)
 	modal.find('.link').attr('href', link);
 
@@ -86,10 +85,10 @@ function populateModal(elt) {
 	for (i = 0; i < img.length; i++){
 		var imgAppend = $('<div class="imgDiv"><div class="img"><p class="imgTxt"></p></div></div>');
 		//adds the overlay to the body everytime the modal is opened
-		$("#imgSection").append(imgAppend);
+		$(".projectImages").append(imgAppend);
 
-		imgMod.find('.img:nth-of-type('+ i + ')').css('background-image', img[i]);
-		imgMod.find('.imgTxt:nth-of-type('+ i +')').html(imgTxt[i]);
+		$(".imgDiv:nth-of-type("+(i+1)+")").find(".img").css('background-image', img[i]);
+		$(".imgDiv:nth-of-type("+(i+1)+")").find('.imgTxt').html(imgTxt[i]);
 	}
 
 }
