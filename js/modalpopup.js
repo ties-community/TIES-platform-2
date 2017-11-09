@@ -69,13 +69,13 @@ function populateModal(elt) {
 
 		$(".personDiv:nth-of-type("+(i+1)+")").find(".name").html(team[i]);
 	}
-
-}
 */
+}
+
 //Function to take care of staying there if projects don't have a link
 function clickable(elt) {
 	return elt.attr('href') !== '#';
-}
+};
 
 //Functions to populate team inset within modalfunction populateModal(elt) {
   /*
