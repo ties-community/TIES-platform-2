@@ -269,12 +269,14 @@ Main Content
   margin-top: 15px;
   margin-bottom: 30px; }
 
-#modalPopup .personImg {
+#modalPopup .imgDiv {
   border-radius: 50%;
   width: 200px;
   padding-top: 200px;
   /*to set the same as width, because height: 100% isn't working */
-  margin: 0 auto;
+  margin: 0 auto; }
+
+#modalPopup .img {
   background-size: contain; }
 
 #modalPopup .name {
