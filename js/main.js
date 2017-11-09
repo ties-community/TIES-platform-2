@@ -1,36 +1,114 @@
 //Populate Main Page with threads
-var projInfo = {
-  //Project Organizations
+var projHead = {
+	//Title Pictures
+	'senstaff-mainImg' : 'url(images/projects/senstaff/prototype1.jpg)',
+	//Project Organizations
 	'senstaff-org'   : "Design, Innovation, & Society",
-  //Project Title
-  'senstaff-title' : 'Senstaff',
-  //Project Categories
-  'senstaff-cat' : 'Product',
-  //Project subtitle
+	//Project Title
+	'senstaff-title' : 'Senstaff',
+	//Project subtitle
 	'senstaff-subtitle' : 'I am a subtitle!',
-	//Project problem
-	'senstaff-problem' : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-	//Project solution
-	'senstaff-solution' : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-	//Project final
-	'senstaff-final' : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-	//Additional Info Link
-	'senstaff-link'   : 'https://drive.google.com/open?id=0B32gQGnV1_U-UVdaT0tockxDQUk',
-};
+	//Project Categories
+	'senstaff-cat' : 'Product',
 
-var projView = {
-	'senstaff-team' : ['Luke Bateman', 'Lei Luo', "Sean Alderdice", "Lilit Balagyozyan"],
+};
+var projDetails = {
 	//Project Images
 	'senstaff-img' : ['url(images/projects/senstaff/prototype1.jpg)',
 	'url(images/projects/senstaff/working.jpg)'],
 	//Project Image Description
   'senstaff-imgTxt' : ['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 	'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.']
+	//Project details
+	'senstaff-details' :
+	//Problem Statement
+	['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+	//Solution Statement
+	'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+	//Final Outcome
+	'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'],
+	//Project Team
+	'senstaff-team' : ['Luke Bateman', 'Emil Andreasan', 'Jack Yang'],
+	//Additional Info Link
+	'senstaff-link' : ['https://drive.google.com/open?id=0B32gQGnV1_U-UVdaT0tockxDQUk']
+};
+var developers = {
+	//Developer Names
+	'luke-name' : 'Luke Bateman',
+	'lei-name' : 'Lei Luo',
+	'sean-name' : 'Sean Alderdice',
+	'lilit-name' : 'Lilit Balagyozyan',
+	//Developer Images
+	'luke-name' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'lei-name' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'sean-name' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'lilit-name' : 'url(images/projects/senstaff/prototype1.jpg)',
 };
 
 $('.addBar').mouseover(function () {
 	$('.add').toggleClass('showAdd')
 });
+
+function populateProjects(e) {
+//Create div with required sub sections for each part of 
+
+
+
+
+  //Creates a variable and associates it with the id of the tag selected in the html
+  //example: <div class="thread" id="senstaff">
+  //var id becomes equal to senstaff
+  var id = e.parent().attr('id');
+  //logs the id to the console (verifies process is working)
+  console.log(id);
+
+	//creates variables to store the id above with appended specifier like -org i.e. senstaff-org
+
+	//Project Header Data
+	var mainImg = projHead[id + '-mainImg'];
+	var org = projHead[id + '-org'];
+	var title = projHead[id + '-title'];
+	var subtitle = projHead[id + '-subtitle']
+  var cat = projHead[id + '-cat'];
+
+	//Project Details
+	var link = projInfo[id + '-link'];
+	var problem = projInfo[id + '-problem'];
+	var solution = projInfo[id + '-solution'];
+	var final = projInfo[id + '-final'];
+
+	//Project Details Data
+	var team = projView[id + '-team']
+  var img = projView[id + '-img'];
+  var imgTxt = projView[id + '-imgTxt'];
+  var detail = projView[id + '-detail'];
+
+  //Creates modal variable to store the id associated with the modal window whenever it is displayed
+	var modal = $("#modalPopup");
+
+  //finds specific tages within the modal and adds css, html tags, and attributes to them
+  //i.e. passes info from database above to modal to be displayed
+  modal.find('.org').html(org);
+  modal.find('.title').html(title);
+	modal.find('.subtitle').html(cat);
+  modal.find('.cat').html(cat);
+	modal.find('.problem').html(problem)
+	modal.find('.solution').html(solution)
+	modal.find('.final').html(final)
+	modal.find('.link').attr('href', link);
+
+
+	// processes array to html and css
+	for (i = 0; i < img.length; i++){
+		var imgAppend = $('<div class="imgDiv"><div class="img"><p class="imgTxt"></p></div></div>');
+		//adds the overlay to the body everytime the modal is opened
+		$(".projectImages").append(imgAppend);
+
+		$(".imgDiv:nth-of-type("+(i+1)+")").find(".img").css('background-image', img[i]);
+		$(".imgDiv:nth-of-type("+(i+1)+")").find('.imgTxt').html(imgTxt[i]);
+	}
+
+}
 
 
 // KONAMI!

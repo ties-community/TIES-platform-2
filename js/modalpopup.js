@@ -23,17 +23,23 @@ function populateModal(elt) {
   var id = elt.parent().attr('id');
   //logs the id to the console (verifies process is working)
   console.log(id);
-  //creates a variable to store the id above with appended specifier like -org i.e. senstaff-org
-  var org = projInfo[id + '-org'];
-	var title = projInfo[id + '-title'];
-	var subtitle = projInfo[id + '-subtitle']
-  var cat = projInfo[id + '-cat'];
+
+	//creates variables to store the id above with appended specifier like -org i.e. senstaff-org
+
+	//Project Header Data
+	var mainImg = projHead[id + '-mainImg'];
+	var org = projHead[id + '-org'];
+	var title = projHead[id + '-title'];
+	var subtitle = projHead[id + '-subtitle']
+  var cat = projHead[id + '-cat'];
+
+	//Project Details
 	var link = projInfo[id + '-link'];
 	var problem = projInfo[id + '-problem'];
 	var solution = projInfo[id + '-solution'];
 	var final = projInfo[id + '-final'];
 
-
+	//Project Details Data
 	var team = projView[id + '-team']
   var img = projView[id + '-img'];
   var imgTxt = projView[id + '-imgTxt'];
