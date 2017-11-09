@@ -29,10 +29,10 @@ function populateModal(elt) {
 	var projSide = $("#modalPopup.projectSide");
   //finds specific tages within the modal and adds css, html tags, and attributes to them - i.e. passes info from database above to modal to be displayed
 	//Project Head Data//////////////////////////////////////////////////////////////////////////////////////////////////
-	projSide.find('.projectHead.org').html(org);
-	projSide.find('.projectHead.title').html(title);
-	projSide.find('.projectHead.subtitle').html(subtitle);
-	projSide.find('.projectHead.cat').html(cat);
+	projSide.find('.projectHead .org').html(org);
+	projSide.find('.projectHead .title').html(title);
+	projSide.find('.projectHead .subtitle').html(subtitle);
+	projSide.find('.projectHead .cat').html(cat);
 	//Main Project Img
 	projSide.find('.mainImg').css('background-image', mainImg);
 	//Project Details Data
