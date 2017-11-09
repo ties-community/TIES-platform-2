@@ -26,7 +26,7 @@ function populateModal(elt) {
 	//Project Team Data
 	var team = projDetails[id + '-team']
   //Creates modal variable to store the id associated with the modal tags sub tags whenever it is displayed
-	var projSide = $("#modalPopup.projectSide");
+	var projSide = $("#modalPopup .projectSide");
   //finds specific tages within the modal and adds css, html tags, and attributes to them - i.e. passes info from database above to modal to be displayed
 	//Project Head Data//////////////////////////////////////////////////////////////////////////////////////////////////
 	projSide.find('.projectHead .org').html(org);
@@ -41,24 +41,25 @@ function populateModal(elt) {
 	//Append Divs to store image and text according to number of images stored in imgs matrix
 	for (i = 0; i < imgs.length; i++){
 		//Adds a div to the projectImages for each image stored in the database
-		project.find('.projectDetails.projectImages').append(imgAppend);
-		$('.projectImages.imgDiv:nth-of-type('+(i+1)+')').css('background-image', imgs[i]);
-		$('.projectImages.imgDiv:nth-of-type('+(i+1)+').imgTxt').html(imgsTxt[i]);
+		projSide.find('.projectImages').append(imgAppend);
+		$('.projectImages .imgDiv:nth-of-type('+(i+1)+')').css('background-image', imgs[i]);
+		$('.projectImages .imgDiv:nth-of-type('+(i+1)+') .imgTxt').html(imgsTxt[i]);
 	}
 	//Add Additional Project Info
 	for (i = 0; i < info.length; i++) {
-		project.find('.projectDetails.projectInfo:nth-child('+(i+1)+')').html(info[i]);
+		projSide.find('.projectInfo p:nth-of-type('+(i+1)+')').html(info[i]);
 	}
 	//Add Project Team Data
 	//for loop to populate team aside with correct number of divs for team members
-	var teamSide = $("#modalPopup.teamSide");
-	var teamAppend = $('<div class="teammateOverlay"><div class="teammatePic"></div></div><a class="teammateName"></a>');
+	var teamSide = $("#modalPopup .teamSide");
+	var teamAppend = $('<div class="teammates"><div class="teammateOverlay"><div class="teammatePic"></div></div><a class="teammateName"></a></div>');
 	for (i = 0; i < team.length; i++) {
 		var teammatePic = developers[team[i] + '-pic'];
 		var teammateName = developers[team[i] + '-name'];
+    var teammateLink = developers[team[i] + '-link'];
 		teamSide.append(teamAppend);
-		teamSide.find('.teammatePic').css('background-image', teammatePic);
-		teamSide.find('.teammateName').html(teammateName).attr('href', link);;
+		teamSide.find('.teammatePic:nth-of-type('+(i+1)+')').css('background-image', teammatePic);
+		teamSide.find('.teammateName:nth-of-type('+(i+1)+')').html(teammateName).attr('href', teammateLink);
 		//teamSide.find('.teammateName').attr('href', link);
 	}
 	// processes array to html and css
