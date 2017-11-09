@@ -16,32 +16,11 @@
   right: 15px;
   width: 20px; }
 
-@media (min-width: 1200px) {
-  #modalPopup .modal_close svg .X {
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all; }
-
-  #modalPopup .modal_close svg:hover .X {
-    fill: #FFD400; } }
-#modalPopup .imgDiv {
+#modalPopup .projectImages .imgDiv {
   position: relative;
   margin-top: 15px;
   margin-bottom: 30px; }
 
-/*#modalPopup .personImg-border {
-	width: 200px;
-
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-
-	z-index: 1;
-
-	pointer-events: none;
-}
-*/
 #modalPopup .personImg {
   border-radius: 50%;
   width: 200px;
@@ -50,24 +29,12 @@
   margin: 0 auto;
   background-size: contain; }
 
-@media (min-width: 600px) {
-  #modalPopup .personImg-border {
-    width: 300px; }
-
-  #modalPopup .personImg {
-    width: 300px;
-    padding-top: 300px;
-    /*to set the same as width, because height: 100% isn't working */ } }
 #modalPopup .name {
   line-height: 1.35em;
   font-size: 1.3em;
   color: #241F59;
   border-bottom: solid 1px #241F59; }
 
-@media (min-width: 1200px) {
-  #modalPopup .name:hover {
-    color: #FFD400;
-    border-bottom: solid 1px #FFD400; } }
 #modalPopup .bio {
   margin-top: 15px;
   margin-bottom: 10px; }
@@ -76,6 +43,25 @@
   color: #241F59;
   border-bottom: 1px #241F59 solid; }
 
+@media (min-width: 1200px) {
+  #modalPopup .name:hover {
+    color: #FFD400;
+    border-bottom: solid 1px #FFD400; } }
+@media (min-width: 600px) {
+  #modalPopup .personImg-border {
+    width: 300px; }
+
+  #modalPopup .personImg {
+    width: 300px;
+    padding-top: 300px;
+    /*to set the same as width, because height: 100% isn't working */ } }
+@media (min-width: 1200px) {
+  #modalPopup .modal_close svg .X {
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all; }
+
+  #modalPopup .modal_close svg:hover .X {
+    fill: #FFD400; } }
 @media (min-width: 1200px) {
   #modalPopup .bio a:hover {
     color: #FFD400;
@@ -113,5 +99,20 @@
   width: 100%;
   background: #000;
   display: none; }
+
+/*#modalPopup .personImg-border {
+	width: 200px;
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+
+	z-index: 1;
+
+	pointer-events: none;
+}
+*/
 
 /*# sourceMappingURL=modalPopup.css.map */

@@ -53,22 +53,6 @@ Add Button
 /*==========================================================================
 Main Content
 ==========================================================================*/
-.threads {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  max-width: 80vw;
-}
-.thread {
-  width: 200px;
-  height: 250px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.75%;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, .5);
-}
 @import 'threads.scss';
 @import 'modalPopup.scss';
 /*
