@@ -57,7 +57,7 @@ function populateModal(elt) {
 
   //Creates modal variable to store the id associated with the modal window whenever it is displayed
 	var modal = $("#modalPopup");
-
+	var imgMod = $(".imgSection");
 
   //finds specific tages within the modal and adds css, html tags, and attributes to them
   //i.e. passes info from database above to modal to be displayed
@@ -69,12 +69,15 @@ function populateModal(elt) {
 
 	// processes array to html and css
 	for (i = 0; i < img.length; i++){
-		modal.find('.img:nth-of-type(i)').css('background-image', img);
+		var imgAppend = $('<div class="imgDiv"><div class="img"><p class="imgTxt"></p></div></div>');
+		//adds the overlay to the body everytime the modal is opened
+		$("#imgSection").append(imgAppend);
+
+		imgMod.find('.img:nth-of-type('+ i + ')').css('background-image', img[i]);
+
+		imgMod.find('.imgTxt:nth-of-type('+ i +')').html(imgTxt[i]);
 	}
 
-	for (i = 0; i < imgTxt.length; i++){
-		modal.find('.imgTxt:nth-of-type(i)').html(imgTxt);
-	}
 
 	for (i = 0; i < detail.length; i++){
 		modal.find('.detail:nth-of-type(i)').html(details);
