@@ -1,20 +1,8 @@
 //Responsive Offset of Modal for different window sizes
-var offsetTop = $(window).height() * 0.1;
+var offsetTop = $(window).height() * 0.040;
 //calls the leanModal Function anytime a link with the rel of leanModal is called
-$("a[rel*=leanModal]").leanModal({ top : offsetTop, overlay : 0.4, closeButton: ".modal_close" });
+$("a[rel*=leanModal]").leanModal({ top : offsetTop, overlay : 0.6, closeButton: ".modal_close" });
 
-
-//Creates a matrix variable to store all project info displayed within the modal
-//Stored variables in main.js to reference for populating the landing page
-
-//Creates a matrix variable to store all the team member info associated with each project
-/*var teamInfo = {
-  Team Info
-  Team Member Names
-  'luke-teamName'   : 'Luke Bateman',
-  Team Member Pictures
-	'luke-teamImg'   : 'url(images/developers/luke.jpg)',
-}*/
 //Function to populate the project section of the modal
 function populateModal(elt) {
   //Creates a variable and associates it with the id of the tag selected in the html
@@ -52,7 +40,7 @@ function populateModal(elt) {
   //i.e. passes info from database above to modal to be displayed
   modal.find('.org').html(org);
   modal.find('.title').html(title);
-	modal.find('.subtitle').html(cat);
+	modal.find('.subtitle').html(subtitle);
   modal.find('.cat').html(cat);
 	modal.find('.problem').html(problem)
 	modal.find('.solution').html(solution)
@@ -70,6 +58,13 @@ function populateModal(elt) {
 		$(".imgDiv:nth-of-type("+(i+1)+")").find('.imgTxt').html(imgTxt[i]);
 	}
 
+	for (i = 0; i < team.length; i++){
+		var teamAppend = $('<div class="personDiv"><p class="name"></p></div></div>')
+		$(".projectTeam").append(teamAppend);
+
+		$(".personDiv:nth-of-type("+(i+1)+")").find(".name").html(team[i]);
+	}
+
 }
 
 
@@ -77,6 +72,7 @@ function populateModal(elt) {
 function clickable(elt) {
 	return elt.attr('href') !== '#';
 }
+
 //Functions to populate team inset within modalfunction populateModal(elt) {
   /*
   function populateModal(elt) {
