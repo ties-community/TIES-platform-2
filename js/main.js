@@ -19,18 +19,18 @@ var projDetails = {
 	//Project Image Description
   'senstaff-imgTxt' : ['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 	'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.']
-	//Project details
-	'senstaff-details' :
+	//Project Info
+	'senstaff-info' :
 	//Problem Statement
 	['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 	//Solution Statement
 	'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 	//Final Outcome
 	'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'],
-	//Project Team
-	'senstaff-team' : ['Luke Bateman', 'Emil Andreasan', 'Jack Yang'],
 	//Additional Info Link
-	'senstaff-link' : ['https://drive.google.com/open?id=0B32gQGnV1_U-UVdaT0tockxDQUk']
+	'senstaff-link' : ['https://drive.google.com/open?id=0B32gQGnV1_U-UVdaT0tockxDQUk'],
+	//Project Team
+	'senstaff-team' : ['luke', 'emil', 'jack']
 };
 var developers = {
 	//Developer Names
@@ -38,11 +38,22 @@ var developers = {
 	'lei-name' : 'Lei Luo',
 	'sean-name' : 'Sean Alderdice',
 	'lilit-name' : 'Lilit Balagyozyan',
+	'emil-name' : 'Emil Andreasan',
+	'jack-name' : 'Jack Yang',
 	//Developer Images
-	'luke-name' : 'url(images/projects/senstaff/prototype1.jpg)',
-	'lei-name' : 'url(images/projects/senstaff/prototype1.jpg)',
-	'sean-name' : 'url(images/projects/senstaff/prototype1.jpg)',
-	'lilit-name' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'luke-pic' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'lei-pic' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'sean-pic' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'lilit-pic' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'emil-pic' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'jack-pic' : 'url(images/projects/senstaff/prototype1.jpg)',
+	//Developer links
+	'luke-link' : 'https://www.linkedin.com/in/luke-bateman-245226a0/',
+	'lei-link' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'sean-link' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'lilit-link' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'emil-link' : 'url(images/projects/senstaff/prototype1.jpg)',
+	'jack-link' : 'url(images/projects/senstaff/prototype1.jpg)',
 };
 
 $('.addBar').mouseover(function () {
@@ -50,7 +61,7 @@ $('.addBar').mouseover(function () {
 });
 
 function populateProjects(e) {
-//Create div with required sub sections for each part of 
+//Create div with required sub sections for each part of
 
 
 

@@ -11,53 +11,58 @@ function populateModal(elt) {
   var id = elt.parent().attr('id');
   //logs the id to the console (verifies process is working)
   console.log(id);
-
 	//creates variables to store the id above with appended specifier like -org i.e. senstaff-org
-
 	//Project Header Data
 	var mainImg = projHead[id + '-mainImg'];
 	var org = projHead[id + '-org'];
 	var title = projHead[id + '-title'];
 	var subtitle = projHead[id + '-subtitle']
   var cat = projHead[id + '-cat'];
-
-	//Project Details
-	var link = projInfo[id + '-link'];
-	var problem = projInfo[id + '-problem'];
-	var solution = projInfo[id + '-solution'];
-	var final = projInfo[id + '-final'];
-
 	//Project Details Data
-	var team = projView[id + '-team']
-  var img = projView[id + '-img'];
-  var imgTxt = projView[id + '-imgTxt'];
-  var detail = projView[id + '-detail'];
-
-  //Creates modal variable to store the id associated with the modal window whenever it is displayed
-	var modal = $("#modalPopup");
-
-  //finds specific tages within the modal and adds css, html tags, and attributes to them
-  //i.e. passes info from database above to modal to be displayed
-  modal.find('.org').html(org);
-  modal.find('.title').html(title);
-	modal.find('.subtitle').html(subtitle);
-  modal.find('.cat').html(cat);
-	modal.find('.problem').html(problem)
-	modal.find('.solution').html(solution)
-	modal.find('.final').html(final)
-	modal.find('.link').attr('href', link);
-
-
-	// processes array to html and css
-	for (i = 0; i < img.length; i++){
-		var imgAppend = $('<div class="imgDiv"><div class="img"><p class="imgTxt"></p></div></div>');
-		//adds the overlay to the body everytime the modal is opened
-		$(".projectImages").append(imgAppend);
-
-		$(".imgDiv:nth-of-type("+(i+1)+")").find(".img").css('background-image', img[i]);
-		$(".imgDiv:nth-of-type("+(i+1)+")").find('.imgTxt').html(imgTxt[i]);
+	var imgs = projDetails[id + '-img'];
+	var imgsTxt = projDetails[id + '-imgTxt'];
+	var info = projDetails[id + '-info'];
+	var links = projDetails[id + '-link'];
+	//Project Team Data
+	var team = projDetails[id + '-team']
+  //Creates modal variable to store the id associated with the modal tags sub tags whenever it is displayed
+	var projSide = $("#modalPopup.projectSide");
+  //finds specific tages within the modal and adds css, html tags, and attributes to them - i.e. passes info from database above to modal to be displayed
+	//Project Head Data//////////////////////////////////////////////////////////////////////////////////////////////////
+	projSide.find('.projectHead.org').html(org);
+	projSide.find('.projectHead.title').html(title);
+	projSide.find('.projectHead.subtitle').html(subtitle);
+	projSide.find('.projectHead.cat').html(cat);
+	//Main Project Img
+	projSide.find('.mainImg').css('background-image', mainImg);
+	//Project Details Data
+	//Add Project Images & Descriptions
+	var imgAppend = $('<div class="imgDiv"><p class="imgTxt"></p></div>');
+	//Append Divs to store image and text according to number of images stored in imgs matrix
+	for (i = 0; i < imgs.length; i++){
+		//Adds a div to the projectImages for each image stored in the database
+		project.find('.projectDetails.projectImages').append(imgAppend);
+		$('.projectImages.imgDiv:nth-of-type('+(i+1)+')').css('background-image', imgs[i]);
+		$('.projectImages.imgDiv:nth-of-type('+(i+1)+').imgTxt').html(imgsTxt[i]);
 	}
-
+	//Add Additional Project Info
+	for (i = 0; i < info.length; i++) {
+		project.find('.projectDetails.projectInfo:nth-child('+(i+1)+')').html(info[i]);
+	}
+	//Add Project Team Data
+	//for loop to populate team aside with correct number of divs for team members
+	var teamSide = $("#modalPopup.teamSide");
+	var teamAppend = $('<div class="teammateOverlay"><div class="teammatePic"></div></div><a class="teammateName"></a>');
+	for (i = 0; i < team.length; i++) {
+		var teammatePic = developers[team[i] + '-pic'];
+		var teammateName = developers[team[i] + '-name'];
+		teamSide.append(teamAppend);
+		teamSide.find('.teammatePic').css('background-image', teammatePic);
+		teamSide.find('.teammateName').html(teammateName).attr('href', link);;
+		//teamSide.find('.teammateName').attr('href', link);
+	}
+	// processes array to html and css
+	/*
 	for (i = 0; i < team.length; i++){
 		var teamAppend = $('<div class="personDiv"><p class="name"></p></div></div>')
 		$(".projectTeam").append(teamAppend);
@@ -66,8 +71,7 @@ function populateModal(elt) {
 	}
 
 }
-
-
+*/
 //Function to take care of staying there if projects don't have a link
 function clickable(elt) {
 	return elt.attr('href') !== '#';

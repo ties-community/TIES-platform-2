@@ -278,22 +278,6 @@ Main Content
   padding-top: 200px;
   /*to set the same as width, because height: 100% isn't working */
   margin: 0 auto; }
-<<<<<<< HEAD
-=======
-
-#modalPopup .img {
-  background-size: contain; }
-
-#modalPopup .name {
-  line-height: 1.35em;
-  font-size: 1.3em;
-  color: #241F59;
-  border-bottom: solid 1px #241F59; }
-
-#modalPopup .bio {
-  margin-top: 15px;
-  margin-bottom: 10px; }
->>>>>>> dc182b8a41a16722a8a72fbd6468f9f112477a01
 
 #modalPopup .img {
   background-size: contain; }
