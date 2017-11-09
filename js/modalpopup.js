@@ -12,20 +12,26 @@ var projInfo = {
   'senstaff-title' : 'Senstaff',
   //Project Categories
   'senstaff-cat' : 'Product',
-  //Additional Info Link
-	'senstaff-link'   : 'https://drive.google.com/open?id=0B32gQGnV1_U-UVdaT0tockxDQUk',
+  //Project subtitle
+	'senstaff-subtitle' : 'I am a subtitle!',
+	//Project problem
+	'senstaff-problem' : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	//Project solution
+	'senstaff-solution' : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	//Project final
+	'senstaff-final' : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+	//Additional Info Link
+	'senstaff-link'   : 'https://drive.google.com/open?id=0B32gQGnV1_U-UVdaT0tockxDQUk'
 };
 
 var projView = {
 	'senstaff-team' : ['Luke Bateman', 'Lei Luo', "Sean Alderdice", "Lilit Balagyozyan"]
 	//Project Images
-	'senstaff-img' : ['url(images/projects/senstaff/prototype1.jpg)'],
+	'senstaff-img' : ['url(images/projects/senstaff/prototype1.jpg)',
+	'url(images/projects/senstaff/working.jpg)'],
 	//Project Image Description
   'senstaff-imgTxt' : ['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-	'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'],
-	//Project details
-	'senstaff-detail' : ['The Senstaff unites active living with technological and environmental agency. The design goal was to create an object that engaged youthful curiosity in the collection of environmental data. By designing a product that serves as both a hiking staff and a sensor for environmental pollutants, the senstaff hopes to inspire democratic collection of environmental data for local communities to leverage in the pursuit of sustainable development.',
-	'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'],
+	'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.']
 };
 
 //Creates a matrix variable to store all the team member info associated with each project
@@ -47,8 +53,13 @@ function populateModal(elt) {
   //creates a variable to store the id above with appended specifier like -org i.e. senstaff-org
   var org = projInfo[id + '-org'];
 	var title = projInfo[id + '-title'];
+	var subtitle = projInfo[id + '-subtitle']
   var cat = projInfo[id + '-cat'];
 	var link = projInfo[id + '-link'];
+	var mission = projInfo[id + '-mission'];
+	var problem = projInfo[id + '-problem'];
+	var final = projInfo[id + '-final'];
+
 
 	var team = projView[id + '-team']
   var img = projView[id + '-img'];
@@ -63,7 +74,11 @@ function populateModal(elt) {
   //i.e. passes info from database above to modal to be displayed
   modal.find('.org').html(org);
   modal.find('.title').html(title);
+	modal.find('.subtitle').html(cat);
   modal.find('.cat').html(cat);
+	modal.find('.mission').html(mission)
+	modal.find('.problem').html(problem)
+	modal.find('.final').html(final)
 	modal.find('.link').attr('href', link);
 
 
@@ -74,13 +89,7 @@ function populateModal(elt) {
 		$("#imgSection").append(imgAppend);
 
 		imgMod.find('.img:nth-of-type('+ i + ')').css('background-image', img[i]);
-
 		imgMod.find('.imgTxt:nth-of-type('+ i +')').html(imgTxt[i]);
-	}
-
-
-	for (i = 0; i < detail.length; i++){
-		modal.find('.detail:nth-of-type(i)').html(details);
 	}
 
 }
