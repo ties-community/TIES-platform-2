@@ -7,6 +7,7 @@
 	background-color: white;
 	border: 2px solid white;
 
+	width: 95vw;
 	max-width: 95vw;
 	max-height: 90vh;
 	overflow: scroll;
@@ -15,52 +16,61 @@
 
 	padding: 30px;
 }
-
 #modalPopup .modal_close {
 	position: absolute;
 	top: 15px;
 	right: 15px;
-
 	width: 20px;
+	svg:hover .X {
+			fill: grey;
+	}
 }
-
-#modalPopup .modal_close svg:hover .X {
-		fill: grey;
+#modalPopup .projectSide {
+	//sadfa
 }
-
-
 #modalPopup .projectHead {
-
+	//daf
 }
-
-
+#modalPopup .projectDetails {
+	//adfsa
+}
 #modalPopup .projectImages {
 	.imgDiv {
 		position: relative;
 		margin-top: 15px;
-
 		margin-bottom: 30px;
+		border-radius: 50%;
+		width: 200px;
+		padding-top: 200px; /*to set the same as width, because height: 100% isn't working */
+
+		margin: 0 auto;
+	}
+	.imgTxt {
+		//asdf
+	}
+}
+#modalPopup .projectInfo {
+	.prob {
+		}
+	.sol {
+		//asdf
+	}
+	.fin {
+		//asdf
 	}
 
 }
+#modalPopup .teamSide {
+	.teammateOverlay {
 
-#modalPopup .projectDetails {
+	}
+	.teammatePic {
 
+	}
+	.teammateName {
+
+	}
 }
-
-#modalPopup .imgDiv {
-	border-radius: 50%;
-	width: 200px;
-	padding-top: 200px; /*to set the same as width, because height: 100% isn't working */
-
-	margin: 0 auto;
-}
-
-#modalPopup .img {
-
-	background-size: contain;
-}
-
 #lean_overlay {
     position: fixed;
     z-index:100;
@@ -72,7 +82,7 @@
     display: none;
 }
 
-//
+//Media Queries!!! Need for responsive window size
 // #modalPopup .name {
 // 	line-height: 1.35em;
 // 	font-size: 1.3em;
