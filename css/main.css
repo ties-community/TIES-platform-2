@@ -1,355 +1,72 @@
-/*==========================================================================
-Global Variables
-==========================================================================*/
-main, .add, .showAdd, footer {
-  -webkit-transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -ms-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out; }
-
-.slideUp {
-  transfrom: translateY(100%); }
-
-/*==========================================================================
-Base styles:
-==========================================================================*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
-body {
-  letter-spacing: .02em;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Raleway', sans-serif;
-  color: #112725;
-  font-size: 1em;
-  overflow-x: hidden;
-  height: 100%;
-  background: linear-gradient(to bottom, #122623 0%, #023C5D 30%, #03535D 60%, #1B9250 100%);
-  background-attachment: fixed; }
-
-img {
-  max-width: 100%; }
-
-main {
-  display: flex;
-  justify-content: center;
-  padding-top: 12vh; }
-
-a {
-  text-decoration: none; }
-  a:visited {
-    color: inherit; }
-
-ul {
-  list-style: none; }
-
-/*==========================================================================
-Navigation
-==========================================================================*/
-.navBar {
-  width: 100vw;
-  height: 10vh;
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-  z-index: 10001;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5); }
-  .navBar li {
-    position: relative; }
-
-.filter ul {
-  background: #fff;
-  border-radius: 0px;
-  left: -12px;
-  list-style: none;
-  margin: 0;
-  opacity: 0;
-  padding: 12px;
-  position: absolute;
-  top: 38px;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-  visibility: hidden;
-  width: 150px; }
-  .filter ul li {
-    margin-bottom: 8%; }
-
-.filter:hover ul {
-  opacity: 1;
-  top: 20px;
-  visibility: visible; }
-
-/*==========================================================================
-Add Button
-==========================================================================*/
-.addBar {
-  position: fixed;
-  float: left;
-  bottom: 0;
-  width: 100px;
-  height: 100px;
-  background: white;
-  border-radius: 50px;
-  margin-left: 25px;
-  margin-bottom: 25px;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center; }
-
-.addBar div {
-  width: 50%;
-  height: 6%;
-  background-color: #08374F;
-  border-radius: 2px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  position: relative; }
-  .addBar div:first-child {
-    transform: translateX(25px) rotate(90deg); }
-  .addBar div:nth-child(2) {
-    transform: translateX(-25px); }
-
-.add {
-  position: fixed;
-  float: left;
-  background: white;
-  margin-left: 38px;
-  margin-bottom: 25px;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  width: 75px;
-  height: 75px;
-  border-radius: 37.75px; }
-
-#idea {
-  bottom: 125px; }
-
-#research {
-  bottom: 225px; }
-
-#project {
-  bottom: 325px; }
-
-#organization {
-  bottom: 425px; }
-
-.addBar:hover {
-  height: 95px;
-  width: 95px;
-  margin-left: 28px;
-  margin-bottom: 28px; }
-
-.showAdd {
-  opacity: 1; }
-
-/*==========================================================================
-Main Content
-==========================================================================*/
-.threads {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  max-width: 80vw; }
-
-.thread {
-  width: 200px;
-  height: 250px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.75%;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5); }
-
-.projectLink-img {
-  border-radius: 50%;
-  display: inline-block;
-  width: 90%;
-  padding-top: 90%;
-  /*to set the same as width, because height: 100% isn't working*/ }
-
-#senstaff .projectLink-img {
-  background: linear-gradient(transparent, transparent), url("../images/projects/senstaff/prototype1.jpg") no-repeat;
-  background: -webkit-linear-gradient(transparent, transparent), url("../images/projects/senstaff/prototype1.jpg") no-repeat;
-  background-size: contain; }
-
 /*
-@media (min-width: 1200px) {
-	.thread {
-		width: 30%;
-		margin-right: 10%;
-	}
-}
+Error: Invalid CSS after "*\/": expected "}", was ""
+        on line 180 of scss/modalPopup.scss
+        from line 57 of scss/main.scss
 
-@media (min-width: 750px) {
-	.thread {
-		width: 20%;
-		margin-right: 5%;
-	}
-}
-@media (min-width: 1000px) {
-	.thread {
-		width: 28%;
-		margin-right: 5%;
-	}
-}
-.projectLink-img {
-	border-radius: 50%;
-	display: inline-block;
-	width: 90%;
-	padding-top: 90%;
-}
-.projectLink-txt {
-	font-size: 1.3em;
-	font-weight: 500;
-	color: #241F59;
-	border-bottom: 1px solid #241F59;
-}
-@media (min-width: 1200px) {
-	.projectLink-txt:hover {
-		color: #00B5AD;
-		border-bottom: 1px solid #00B5AD;
-	}
-	.companyName:hover {
-		color: #00B5AD;
-		border-bottom: 1px solid #00B5AD;
-	}
-}
-.schoolTag {
-	font-size: 1.0em;
-	margin-top: 5px;
-}
-.threads .schoolTag {
-	margin-bottom: 0;
-}
-.projectLink-txt {
-	font-size: 1.2em;
-}
-.committeeRole {
-	font-size: 1.0em;
-}
-.companyName {
-	position: relative;
-	font-size: 1.2em;
-	top: 5px;
+175: 	z-index: 1;
+176: 
+177: 	pointer-events: none;
+178: }
+179: *\/
 
-	color: #241F59;
-	border-bottom: 1px solid #241F59;
-
-	margin-bottom: 15px;
-}
+Backtrace:
+scss/modalPopup.scss:180
+scss/main.scss:57
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1278:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1208:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1203:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:679:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:670:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:696:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/engine.rb:321:in `to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
 */
-/* Modal Popup */
-#modalPopup {
-  display: none;
-  position: relative;
-  background-color: white;
-  border: 2px solid white;
-  max-width: 95vw;
-  max-height: 90vh;
-  overflow: scroll;
-  margin: 0 auto;
-  padding: 30px; }
-
-#modalPopup .modal_close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 20px; }
-
-#modalPopup .modal_close svg:hover .X {
-  fill: grey; }
-
-#modalPopup .projectImages .imgDiv {
-  position: relative;
-  margin-top: 15px;
-  margin-bottom: 30px; }
-
-#modalPopup .imgDiv {
-  border-radius: 50%;
-  width: 200px;
-  padding-top: 200px;
-  /*to set the same as width, because height: 100% isn't working */
-  margin: 0 auto; }
-
-#modalPopup .img {
-  background-size: contain; }
-
-#lean_overlay {
-  position: fixed;
-  z-index: 100;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  display: none; }
-
-/*#modalPopup .personImg-border {
-	width: 200px;
-
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-
-	z-index: 1;
-
-	pointer-events: none;
-}
-*/
-/*
-==========================================================================
-Footer
-==========================================================================
-*/
-footer {
-  bottom: 0;
-  width: 100%;
-  z-index: 1001;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 1;
-  transform: translateY(0%); }
-
-/*
-==========================================================================
-Media Queries
-==========================================================================
-*/
-@media screen and (max-width: 900px) {
-  h1 {
-    font-size: 2em; }
-
-  h2 {
-    font-size: 1.5em; }
-
-  .landingPage .logo {
-    top: 10vh; } }
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 1.75em; }
-
-  h2 {
-    font-size: 1.25em; }
-
-  .sideMenu {
-    width: 100%; }
-
-  .projectMenuActive {
-    transform: translateX(0%); }
-
-  .landingPage .logo {
-    top: 30vh; } }
-@media screen and (max-width: 360px) {
-  .landingPage .logo {
-    top: 30vh; } }
-
-/*# sourceMappingURL=main.css.map */
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"*/\": expected \"}\", was \"\"\A         on line 180 of scss/modalPopup.scss\A         from line 57 of scss/main.scss\A \A 175: 	z-index: 1;\A 176: \A 177: 	pointer-events: none;\A 178: }\A 179: */"; }
