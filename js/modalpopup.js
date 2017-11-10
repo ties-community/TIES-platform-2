@@ -14,14 +14,6 @@ function populateModal(elt) {
   //logs the id to the console (verifies process is working)
   console.log(id);
 	//creates variables to store the id above with appended specifier like -org i.e. senstaff-org
-
-	//Project Details Data
-	var imgs = projDetails[id + '-img'];
-	var imgsTxt = projDetails[id + '-imgTxt'];
-	var info = projDetails[id + '-info'];
-	var links = projDetails[id + '-link'];
-	//Project Team Data
-	var team = projDetails[id + '-team'];
   //Creates modal variable to store the id associated with the modal tags sub tags whenever it is displayed
 	var projSide = $("#modalPopup .projectSide");
   //finds specific tages within the modal and adds css, html tags, and attributes to them - i.e. passes info from database above to modal to be displayed
@@ -35,40 +27,30 @@ function populateModal(elt) {
 	//Project Details Data
 	//Add Project Images & Descriptions
 	//Append Divs to store image and text according to number of images stored in imgs matrix
-	for (i = 0; i < imgs.length; i++){
+	for (i = 0; i < threads[num].imgs.length; i++){
 		//Adds a div to the projectImages for each image stored in the database
 		$('.projectImages').append('<div class="imgDiv"><p class="imgTxt"></p></div>');
 		projSide.find('.imgDiv:nth-of-type('+(i+1)+')').css('background-image', threads[num].imgs[i]);
 		projSide.find('.imgDiv:nth-of-type('+(i+1)+') .imgTxt').html(threads[num].imgsTxt[i]);
 	}
 	//Add Additional Project Info
-	for (i = 0; i < info.length; i++) {
+	for (i = 0; i < threads[num].info.length; i++) {
 		projSide.find('.projectInfo p:nth-of-type('+(i+1)+')').html(threads[num].info[i]);
 	}
   //Link to Google Drive Folder
   projSide.find('.gDrive').attr('href', threads[num].link);
-	//Add Project Team Data
-	//for loop to populate team aside with correct number of divs for team members
-	var teamSide = $("#modalPopup");
-	for (i = 0; i < team.length; i++) {
-		var teammatePic = developers[team[i] + '-pic'];
-		var teammateName = developers[team[i] + '-name'];
-    var teammateLink = developers[team[i] + '-link'];
-		teamSide.find('.teamSide').append('<div class="teammates"><div class="teammateOverlay"><div class="teammatePic"></div></div><a class="teammateName"></a></div>');
-		teamSide.find('.teammatePic:nth-of-type('+(i+1)+')').css('background-image', teammatePic);
-		teamSide.find('.teammateName:nth-of-type('+(i+1)+')').html(teammateName).attr('href', teammateLink);
-    console.log(teammateName);
-		//teamSide.find('.teammateName').attr('href', link);
-	}
-	// processes array to html and css
-	/*
-	for (i = 0; i < team.length; i++){
-		var teamAppend = $('<div class="personDiv"><p class="name"></p></div></div>')
-		$(".projectTeam").append(teamAppend);
 
-		$(".personDiv:nth-of-type("+(i+1)+")").find(".name").html(team[i]);
+  //Add Project Team Data
+	//for loop to populate team aside with correct number of divs for team members
+	for (i = 0; i < threads[num].team.length; i++) {
+		$('.devSide').append('<div class="devs"><div class="devOverlay"><div class="devPic"></div></div><a target="_blank" class="devName"></a></div>');
+    for (j=0; j < developers.length; j++) {
+      if (developers[j].id === threads[num].team[i]) {
+          $('.devs:nth-child('+(i+1)+') .devPic').css('background-image', developers[j].profilePic);
+          $('.devs:nth-child('+(i+1)+') .devName').html(developers[j].name).attr('href', developers[j].linkedIn);
+      }
+    }
 	}
-*/
 }
 
 //Function to take care of staying there if projects don't have a link
