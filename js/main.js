@@ -12,8 +12,6 @@ var projHead = {
 	'senstaff-cat' : 'Product',
 
 };
-
-
 var projDetails = {
 	//Project Images
 	'senstaff-img' : ['url(images/projects/senstaff/prototype1.jpg)',
@@ -59,8 +57,8 @@ $('.addBar').mouseover(function () {
 });
 
 function populateProjects(e) {
-//Create div with required sub sections for each part of
-
+	//Create div with required sub sections for each part of
+	var thread = $('<div class="thread"><a rel="leanModal" onclick="populateModal($(this)); return true;" class="projectLink projectLink-img" href="#modalPopup"></a><br><a rel="leanModal" onclick="populateModal($(this)); return true;" class="projectLink projectLink-txt" href="#modalPopup"></a><br><a rel="leanModal" onclick="populateModal($(this)); return true;" class="projectLink projectLink-txt" href="#modalPopup"></a><br><a rel="leanModal" onclick="populateModal($(this)); return true;" class="projectLink projectLink-txt" href="#modalPopup"></a></div>');
 
   //Creates a variable and associates it with the id of the tag selected in the html
   //example: <div class="thread" id="senstaff">
