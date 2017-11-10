@@ -8,16 +8,13 @@ function populateModal(elt) {
   //Creates a variable and associates it with the id of the tag selected in the html
   //example: <div class="thread" id="senstaff">
   //var id becomes equal to senstaff
-  var id = elt.parent().attr('id');
+  var id = elt.parent().attr('class').split(' ')[1];
+  var num = elt.parent().attr('id');
+  console.log(threads[num].mainImg);
   //logs the id to the console (verifies process is working)
   console.log(id);
 	//creates variables to store the id above with appended specifier like -org i.e. senstaff-org
-	//Project Header Data
-	var mainImg = projHead[id + '-mainImg'];
-	var org = projHead[id + '-org'];
-	var title = projHead[id + '-title'];
-	var subtitle = projHead[id + '-subtitle'];
-  var cat = projHead[id + '-cat'];
+
 	//Project Details Data
 	var imgs = projDetails[id + '-img'];
 	var imgsTxt = projDetails[id + '-imgTxt'];
@@ -29,25 +26,27 @@ function populateModal(elt) {
 	var projSide = $("#modalPopup .projectSide");
   //finds specific tages within the modal and adds css, html tags, and attributes to them - i.e. passes info from database above to modal to be displayed
 	//Project Head Data//////////////////////////////////////////////////////////////////////////////////////////////////
-	projSide.find('.projectHead .org').html(org);
-	projSide.find('.projectHead .title').html(title);
-	projSide.find('.projectHead .subtitle').html(subtitle);
-	projSide.find('.projectHead .cat').html(cat);
+	projSide.find('.projectHead .org').html(threads[num].org);
+	projSide.find('.projectHead .title').html(threads[num].title);
+	projSide.find('.projectHead .subtitle').html(threads[num].subTitle);
+	projSide.find('.projectHead .cat').html(threads[num].cat);
 	//Main Project Img
-	projSide.find('.mainImg').css('background-image', mainImg);
+	projSide.find('.mainImg').css('background-image', threads[num].mainImg);
 	//Project Details Data
 	//Add Project Images & Descriptions
 	//Append Divs to store image and text according to number of images stored in imgs matrix
 	for (i = 0; i < imgs.length; i++){
 		//Adds a div to the projectImages for each image stored in the database
 		$('.projectImages').append('<div class="imgDiv"><p class="imgTxt"></p></div>');
-		projSide.find('.imgDiv:nth-of-type('+(i+1)+')').css('background-image', imgs[i]);
-		projSide.find('.imgDiv:nth-of-type('+(i+1)+') .imgTxt').html(imgsTxt[i]);
+		projSide.find('.imgDiv:nth-of-type('+(i+1)+')').css('background-image', threads[num].imgs[i]);
+		projSide.find('.imgDiv:nth-of-type('+(i+1)+') .imgTxt').html(threads[num].imgsTxt[i]);
 	}
 	//Add Additional Project Info
 	for (i = 0; i < info.length; i++) {
-		projSide.find('.projectInfo p:nth-of-type('+(i+1)+')').html(info[i]);
+		projSide.find('.projectInfo p:nth-of-type('+(i+1)+')').html(threads[num].info[i]);
 	}
+  //Link to Google Drive Folder
+  projSide.find('.gDrive').attr('href', threads[num].link);
 	//Add Project Team Data
 	//for loop to populate team aside with correct number of divs for team members
 	var teamSide = $("#modalPopup");

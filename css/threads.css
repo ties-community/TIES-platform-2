@@ -9,21 +9,17 @@
   height: 250px;
   background-color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
   margin: 1.75%;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5); }
 
-.projectLink-img {
+.projectLink-mainImg {
   border-radius: 50%;
   display: inline-block;
   width: 90%;
   padding-top: 90%;
-  /*to set the same as width, because height: 100% isn't working*/ }
-
-#senstaff .projectLink-img {
-  background: linear-gradient(transparent, transparent), url("../images/projects/senstaff/prototype1.jpg") no-repeat;
-  background: -webkit-linear-gradient(transparent, transparent), url("../images/projects/senstaff/prototype1.jpg") no-repeat;
+  /*to set the same as width, because height: 100% isn't working*/
   background-size: contain; }
 
 /*
