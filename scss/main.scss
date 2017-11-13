@@ -17,12 +17,8 @@ body {
     letter-spacing: .02em;
     -webkit-font-smoothing: antialiased;
     font-family: 'Raleway', sans-serif;
-    color: $main-font-color;
     font-size: 1em;
-    overflow-x: hidden;
-    height: 100%;
-    background: linear-gradient(to bottom,#122623 0%, #023C5D 30%, #03535D 60%, #1B9250 100%);
-    background-attachment: fixed;
+    color: $main-font-color;
   }
 img {
     max-width: 100%;
@@ -31,7 +27,10 @@ main {
   @extend %animation;
   display: flex;
   justify-content: center;
-  padding-top: 12vh;
+  background: linear-gradient(to bottom,#122623 0%, #023C5D 30%, #03535D 60%, #1B9250 100%);
+  background-attachment: fixed;
+  z-index: -2;
+  padding-bottom: 40px;
 }
 a {
   text-decoration: none;
@@ -39,71 +38,21 @@ a {
     color: inherit;
   }
 }
-ul {
-  list-style: none;
-}
 /*==========================================================================
 Navigation
 ==========================================================================*/
 @import 'navBar.scss';
 /*==========================================================================
-Add Button
+Header
 ==========================================================================*/
-@import 'addBar.scss';
+@import 'header.scss';
+/*==========================================================================
+Content Buttons
+==========================================================================*/
+@import 'contentButtons.scss';
 /*==========================================================================
 Main Content
 ==========================================================================*/
 @import 'threads.scss';
 @import 'modalPopup.scss';
-/*
-==========================================================================
-Footer
-==========================================================================
-*/
-footer {
-  bottom: 0;
-  width: 100%;
-  z-index: 1001;
-  background: rgba(0,0,0,.8);
-  @extend %animation;
-  opacity: 1;
-  transform: translateY(0%);//make 200% to be off screen
-}
-/*
-==========================================================================
-Media Queries
-==========================================================================
-*/
-@media screen and (max-width: 900px) {
-    h1 {
-      font-size: 2em;
-    }
-    h2 {
-      font-size: 1.5em;
-    }
-    .landingPage .logo {
-      top: 10vh;
-    }
-  }
-@media screen and (max-width: 600px) {
-    h1 {
-      font-size: 1.75em;
-    }
-    h2 {
-      font-size: 1.25em;
-    }
-    .sideMenu {
-      width: 100%;
-    }
-    .projectMenuActive {
-      transform: translateX(0%);
-    }
-    .landingPage .logo {
-      top: 30vh;
-    }
-  }
-@media screen and (max-width: 360px) {
-  .landingPage .logo {
-    top: 30vh;
-  }
-}
+@import 'footer.scss';

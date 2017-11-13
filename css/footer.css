@@ -1,11 +1,11 @@
 /*
-Sass::SyntaxError: ".searchBar #searchTxt[type=text]" failed to @extend "%animation".
+Sass::SyntaxError: "footer" failed to @extend "%animation".
 The selector "%animation" was not found.
 Use "@extend %animation !optional" if the extend should be able to fail.
 
 
 Backtrace:
-scss/navBar.scss:76
+scss/footer.scss:7
 /Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/extend.rb:56:in `block in check_extends_fired!'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/util/subset_map.rb:105:in `block in each_value'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/util/subset_map.rb:105:in `each'
@@ -36,4 +36,4 @@ scss/navBar.scss:76
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: \".searchBar #searchTxt[type=text]\" failed to @extend \"%animation\".\A The selector \"%animation\" was not found.\A Use \"@extend %animation !optional\" if the extend should be able to fail.\A "; }
+  content: "Sass::SyntaxError: \"footer\" failed to @extend \"%animation\".\A The selector \"%animation\" was not found.\A Use \"@extend %animation !optional\" if the extend should be able to fail.\A "; }

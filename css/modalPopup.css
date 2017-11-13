@@ -46,7 +46,8 @@
   height: 100%;
   width: 100%;
   background: #000;
-  display: none; }
+  display: none;
+  cursor: zoom-out; }
 
 /*#modalPopup .personImg-border {
 	width: 200px;
